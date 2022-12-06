@@ -35,7 +35,13 @@ for (let index = 0; index < elvesCalories.length; index++) {
 const ordered = Object.keys(elves).map(elf => [elf, elves[elf]]).sort((elf1, elf2) => elf1[1] - elf2[1]);
 
 // take the first elf
-const highest = ordered[ordered.length - 1];
+const first = ordered[ordered.length - 1][1];
+const second = ordered[ordered.length - 2][1];
+const third = ordered[ordered.length - 3][1];
+
+
+const topThreeElves = first + second + third
 
 console.log(`Number of elves: ${Object.keys(elves).length}`)
-console.log(`Elf with most calories is ${highest}`)
+console.log(`Elf with most calories is ${first}`)
+console.log(`The top 3 elves total calories are ${topThreeElves}`)
